@@ -71,29 +71,22 @@ public class UserDto {
 		this.email = email;
 	}
 
-
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-
-
-	public void setPost(String post) {
-		this.post = post;
-	}
-
-
-
-	
-	
-	
-	
 	@Override
 	public String toString() {
-		return "UserDto [id=" + id + ", userName=" + userName + ", password=" + password + ", email=" + email
-				+ ", title=" + title + ", post=" + post + "]";
+		return "UserDto [id=" + id + ", userName=" + userName + ", password=" + password + ", email=" + email + "]";
 	}
+
+
+
+	
+
+
+
+	
+	
+	
+	
+	
 	
 	
 }

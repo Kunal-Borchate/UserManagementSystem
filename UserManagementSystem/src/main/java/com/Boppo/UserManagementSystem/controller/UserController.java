@@ -42,4 +42,9 @@ public class UserController {
 		
 		return service.findAllUsers();
 	}
+	
+	@GetMapping("/pagination")
+	public ResponseEntity<ResponseStructure<List<UserDto>>> pagination(@RequestParam int num){
+		return service.pagination(num);
+	}
 }

@@ -1,5 +1,6 @@
 package com.Boppo.UserManagementSystem.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,4 +49,19 @@ public class UserDao {
 	public UserDto finduserByEmailAndPassword(String email,String password) {
 		return repo.findUserByEmailAndPassword(email, password);
 	}
+	
+public List<UserDto> pagination(int num){
+		
+		List<UserDto>list=repo.findAll();
+		if (list.isEmpty()) {
+			return null;
+		} else {
+			List<UserDto>list2=new ArrayList<>();
+             for(int i=0;i<num;i++) {
+            	 list2.add(list.get(i));
+             }
+             return list2;
+		}
+	}
+
 }

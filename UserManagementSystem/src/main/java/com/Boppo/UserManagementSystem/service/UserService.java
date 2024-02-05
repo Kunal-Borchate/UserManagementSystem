@@ -71,5 +71,29 @@ public class UserService {
 		    structure.setData(list);
 		    return new ResponseEntity(structure,HttpStatus.FOUND);
 		}
+		
 	}
+	
+	public ResponseEntity<ResponseStructure<List<UserDto>>> pagination(int num){
+		List<UserDto>dbList=dao.findAllUsers();
+		ResponseStructure<List<UserDto>> structure=new ResponseStructure<>();
+		if (dbList.isEmpty()) {
+			return null;
+		}
+		else {
+			List<UserDto>list2=new ArrayList<>();
+            for(int i=0;i<num;i++) {
+           	 list2.add(dbList.get(i));
+            }
+            structure.setMessage("Users Found Successfully");
+		    structure.setStatus(HttpStatus.FOUND.value());
+		    structure.setData(list2);
+		    return new ResponseEntity(structure,HttpStatus.FOUND);
+		}
+	}
+	
+	
+	
+	
+	
 }
